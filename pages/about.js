@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import head from 'next/head'
 
 const about = () => {
