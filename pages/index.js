@@ -1,4 +1,5 @@
 import Head from "next/head";
+import server from '../config/index'
 import ArticleList from "../components/ArticleList";
 export default function Home({articles}) {
   return (
@@ -8,7 +9,7 @@ export default function Home({articles}) {
         <meta name="keywords" content="web programming , development" />
       </Head>
 
-      {/* <ArticleList articles={articles}/> */}
+      <ArticleList articles={articles}/>
     </div>
   );
 }
@@ -28,7 +29,7 @@ export default function Home({articles}) {
 
 //use custom api
 export const getStaticProps = async () => {
-  const res = await fetch(`/api/articles`)
+  const res = await fetch(`${server}/api/articles`)
 
   const articles = await res.json()
 
