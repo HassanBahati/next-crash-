@@ -24,3 +24,17 @@ export default function Home({articles}) {
 //     },
 //   };
 // };
+
+
+//use custom api
+export const getStaticProps = async () => {
+  const res = await fetch(`/api/articles`)
+
+  const articles = await res.json()
+
+  return {
+    props:{
+      articles
+    }
+  }
+}
